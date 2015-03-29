@@ -1,0 +1,527 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1428EACE1AC77075002175B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1428EABD1AC77075002175B2 /* Main.storyboard */; };
+		1428EAD31AC77075002175B2 /* TessieAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428EAC61AC77075002175B2 /* TessieAppDelegate.m */; };
+		1428EAD51AC77075002175B2 /* TessieCommandTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428EAC91AC77075002175B2 /* TessieCommandTableViewCell.m */; };
+		1428EAD61AC77075002175B2 /* TessieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1428EACB1AC77075002175B2 /* TessieViewController.m */; };
+		1462D7301AD05CB60022DAD1 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1462D72D1AD05CB60022DAD1 /* AcousticModelEnglish.bundle */; };
+		1462D7311AD05CB60022DAD1 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462D72E1AD05CB60022DAD1 /* OpenEars.framework */; };
+		1462D7321AD05CB60022DAD1 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462D72F1AD05CB60022DAD1 /* Slt.framework */; };
+		14C3E9331AC8B9C70073C47E /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 14C3E9311AC8B9C70073C47E /* commands.json */; };
+		195DCBC118F3E78300B134DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC018F3E78300B134DB /* Foundation.framework */; };
+		195DCBC318F3E78300B134DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC218F3E78300B134DB /* CoreGraphics.framework */; };
+		195DCBC518F3E78300B134DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC418F3E78300B134DB /* UIKit.framework */; };
+		195DCBCB18F3E78300B134DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 195DCBC918F3E78300B134DB /* InfoPlist.strings */; };
+		195DCBCD18F3E78300B134DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 195DCBCC18F3E78300B134DB /* main.m */; };
+		195DCBD918F3E78300B134DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 195DCBD818F3E78300B134DB /* Images.xcassets */; };
+		195DCBE118F3E78300B134DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC018F3E78300B134DB /* Foundation.framework */; };
+		195DCBE218F3E78300B134DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC418F3E78300B134DB /* UIKit.framework */; };
+		195DCBEA18F3E78300B134DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 195DCBE818F3E78300B134DB /* InfoPlist.strings */; };
+		195DCBEC18F3E78300B134DB /* TessieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 195DCBEB18F3E78300B134DB /* TessieTests.m */; };
+		195DCC0018F3F43A00B134DB /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 195DCBFE18F3F43A00B134DB /* BLE.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		195DCBE318F3E78300B134DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 195DCBB518F3E78300B134DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 195DCBBC18F3E78300B134DB;
+			remoteInfo = SimpleChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1428EABE1AC77075002175B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1428EAC51AC77075002175B2 /* TessieAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessieAppDelegate.h; sourceTree = "<group>"; };
+		1428EAC61AC77075002175B2 /* TessieAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TessieAppDelegate.m; sourceTree = "<group>"; };
+		1428EAC81AC77075002175B2 /* TessieCommandTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessieCommandTableViewCell.h; sourceTree = "<group>"; };
+		1428EAC91AC77075002175B2 /* TessieCommandTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TessieCommandTableViewCell.m; sourceTree = "<group>"; };
+		1428EACA1AC77075002175B2 /* TessieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TessieViewController.h; sourceTree = "<group>"; };
+		1428EACB1AC77075002175B2 /* TessieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TessieViewController.m; sourceTree = "<group>"; };
+		1462D72D1AD05CB60022DAD1 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		1462D72E1AD05CB60022DAD1 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Framework/OpenEars.framework; sourceTree = "<group>"; };
+		1462D72F1AD05CB60022DAD1 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = Framework/Slt.framework; sourceTree = "<group>"; };
+		14C3E9311AC8B9C70073C47E /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
+		195DCBBD18F3E78300B134DB /* Tessie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tessie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		195DCBC018F3E78300B134DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		195DCBC218F3E78300B134DB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		195DCBC418F3E78300B134DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		195DCBC818F3E78300B134DB /* Tessie-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tessie-Info.plist"; sourceTree = "<group>"; };
+		195DCBCA18F3E78300B134DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		195DCBCC18F3E78300B134DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		195DCBCE18F3E78300B134DB /* Tessie-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tessie-Prefix.pch"; sourceTree = "<group>"; };
+		195DCBD818F3E78300B134DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		195DCBDE18F3E78300B134DB /* TessieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TessieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		195DCBE718F3E78300B134DB /* TessieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TessieTests-Info.plist"; sourceTree = "<group>"; };
+		195DCBE918F3E78300B134DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		195DCBEB18F3E78300B134DB /* TessieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TessieTests.m; sourceTree = "<group>"; };
+		195DCBFD18F3F43A00B134DB /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLE.h; sourceTree = "<group>"; };
+		195DCBFE18F3F43A00B134DB /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLE.m; sourceTree = "<group>"; };
+		195DCBFF18F3F43A00B134DB /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDefines.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		195DCBBA18F3E78300B134DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1462D7321AD05CB60022DAD1 /* Slt.framework in Frameworks */,
+				195DCBC318F3E78300B134DB /* CoreGraphics.framework in Frameworks */,
+				195DCBC518F3E78300B134DB /* UIKit.framework in Frameworks */,
+				195DCBC118F3E78300B134DB /* Foundation.framework in Frameworks */,
+				1462D7311AD05CB60022DAD1 /* OpenEars.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		195DCBDB18F3E78300B134DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195DCBE218F3E78300B134DB /* UIKit.framework in Frameworks */,
+				195DCBE118F3E78300B134DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1428EAD81AC77139002175B2 /* Tessie */ = {
+			isa = PBXGroup;
+			children = (
+				1428EABD1AC77075002175B2 /* Main.storyboard */,
+				1428EAC51AC77075002175B2 /* TessieAppDelegate.h */,
+				1428EAC61AC77075002175B2 /* TessieAppDelegate.m */,
+				1428EAC81AC77075002175B2 /* TessieCommandTableViewCell.h */,
+				1428EAC91AC77075002175B2 /* TessieCommandTableViewCell.m */,
+				1428EACA1AC77075002175B2 /* TessieViewController.h */,
+				1428EACB1AC77075002175B2 /* TessieViewController.m */,
+				195DCBD818F3E78300B134DB /* Images.xcassets */,
+				195DCBC718F3E78300B134DB /* Supporting Files */,
+				14C3E9311AC8B9C70073C47E /* commands.json */,
+			);
+			path = Tessie;
+			sourceTree = "<group>";
+		};
+		1428EAD91AC77170002175B2 /* TessieTests */ = {
+			isa = PBXGroup;
+			children = (
+				195DCBEB18F3E78300B134DB /* TessieTests.m */,
+				195DCBE618F3E78300B134DB /* Supporting Files */,
+			);
+			path = TessieTests;
+			sourceTree = "<group>";
+		};
+		195DCBB418F3E78300B134DB = {
+			isa = PBXGroup;
+			children = (
+				1428EAD91AC77170002175B2 /* TessieTests */,
+				1428EAD81AC77139002175B2 /* Tessie */,
+				195DCBFC18F3F43A00B134DB /* BLE */,
+				195DCBBF18F3E78300B134DB /* Frameworks */,
+				195DCBBE18F3E78300B134DB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		195DCBBE18F3E78300B134DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				195DCBBD18F3E78300B134DB /* Tessie.app */,
+				195DCBDE18F3E78300B134DB /* TessieTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		195DCBBF18F3E78300B134DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1462D72D1AD05CB60022DAD1 /* AcousticModelEnglish.bundle */,
+				1462D72E1AD05CB60022DAD1 /* OpenEars.framework */,
+				1462D72F1AD05CB60022DAD1 /* Slt.framework */,
+				195DCBC018F3E78300B134DB /* Foundation.framework */,
+				195DCBC218F3E78300B134DB /* CoreGraphics.framework */,
+				195DCBC418F3E78300B134DB /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		195DCBC718F3E78300B134DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				195DCBC818F3E78300B134DB /* Tessie-Info.plist */,
+				195DCBC918F3E78300B134DB /* InfoPlist.strings */,
+				195DCBCC18F3E78300B134DB /* main.m */,
+				195DCBCE18F3E78300B134DB /* Tessie-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		195DCBE618F3E78300B134DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				195DCBE718F3E78300B134DB /* TessieTests-Info.plist */,
+				195DCBE818F3E78300B134DB /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		195DCBFC18F3F43A00B134DB /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				195DCBFD18F3F43A00B134DB /* BLE.h */,
+				195DCBFE18F3F43A00B134DB /* BLE.m */,
+				195DCBFF18F3F43A00B134DB /* BLEDefines.h */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		195DCBBC18F3E78300B134DB /* Tessie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195DCBEF18F3E78300B134DB /* Build configuration list for PBXNativeTarget "Tessie" */;
+			buildPhases = (
+				195DCBB918F3E78300B134DB /* Sources */,
+				195DCBBA18F3E78300B134DB /* Frameworks */,
+				195DCBBB18F3E78300B134DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tessie;
+			productName = SimpleChat;
+			productReference = 195DCBBD18F3E78300B134DB /* Tessie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		195DCBDD18F3E78300B134DB /* TessieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 195DCBF218F3E78300B134DB /* Build configuration list for PBXNativeTarget "TessieTests" */;
+			buildPhases = (
+				195DCBDA18F3E78300B134DB /* Sources */,
+				195DCBDB18F3E78300B134DB /* Frameworks */,
+				195DCBDC18F3E78300B134DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				195DCBE418F3E78300B134DB /* PBXTargetDependency */,
+			);
+			name = TessieTests;
+			productName = SimpleChatTests;
+			productReference = 195DCBDE18F3E78300B134DB /* TessieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		195DCBB518F3E78300B134DB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RBL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = redbear;
+				TargetAttributes = {
+					195DCBBC18F3E78300B134DB = {
+						DevelopmentTeam = XAB28TECRH;
+					};
+					195DCBDD18F3E78300B134DB = {
+						TestTargetID = 195DCBBC18F3E78300B134DB;
+					};
+				};
+			};
+			buildConfigurationList = 195DCBB818F3E78300B134DB /* Build configuration list for PBXProject "Tessie" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 195DCBB418F3E78300B134DB;
+			productRefGroup = 195DCBBE18F3E78300B134DB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				195DCBBC18F3E78300B134DB /* Tessie */,
+				195DCBDD18F3E78300B134DB /* TessieTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		195DCBBB18F3E78300B134DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195DCBD918F3E78300B134DB /* Images.xcassets in Resources */,
+				14C3E9331AC8B9C70073C47E /* commands.json in Resources */,
+				1428EACE1AC77075002175B2 /* Main.storyboard in Resources */,
+				195DCBCB18F3E78300B134DB /* InfoPlist.strings in Resources */,
+				1462D7301AD05CB60022DAD1 /* AcousticModelEnglish.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		195DCBDC18F3E78300B134DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195DCBEA18F3E78300B134DB /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		195DCBB918F3E78300B134DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195DCBCD18F3E78300B134DB /* main.m in Sources */,
+				1428EAD61AC77075002175B2 /* TessieViewController.m in Sources */,
+				195DCC0018F3F43A00B134DB /* BLE.m in Sources */,
+				1428EAD51AC77075002175B2 /* TessieCommandTableViewCell.m in Sources */,
+				1428EAD31AC77075002175B2 /* TessieAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		195DCBDA18F3E78300B134DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				195DCBEC18F3E78300B134DB /* TessieTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		195DCBE418F3E78300B134DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 195DCBBC18F3E78300B134DB /* Tessie */;
+			targetProxy = 195DCBE318F3E78300B134DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1428EABD1AC77075002175B2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1428EABE1AC77075002175B2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		195DCBC918F3E78300B134DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				195DCBCA18F3E78300B134DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		195DCBE818F3E78300B134DB /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				195DCBE918F3E78300B134DB /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		195DCBED18F3E78300B134DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		195DCBEE18F3E78300B134DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		195DCBF018F3E78300B134DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/TeslaPlus/Tessie/misc/DragonMobileSDK_1.4.14,
+					"$(PROJECT_DIR)/Framework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tessie/Tessie-Prefix.pch";
+				INFOPLIST_FILE = "Tessie/Tessie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = Tessie;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		195DCBF118F3E78300B134DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEPLOYMENT_POSTPROCESSING = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Volumes/TeslaPlus/Tessie/misc/DragonMobileSDK_1.4.14,
+					"$(PROJECT_DIR)/Framework",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tessie/Tessie-Prefix.pch";
+				INFOPLIST_FILE = "Tessie/Tessie-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = Tessie;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		195DCBF318F3E78300B134DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tessie.app/Tessie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tessie/Tessie-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TessieTests/TessieTests-Info.plist";
+				PRODUCT_NAME = TessieTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		195DCBF418F3E78300B134DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Tessie.app/Tessie";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tessie/Tessie-Prefix.pch";
+				INFOPLIST_FILE = "TessieTests/TessieTests-Info.plist";
+				PRODUCT_NAME = TessieTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		195DCBB818F3E78300B134DB /* Build configuration list for PBXProject "Tessie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195DCBED18F3E78300B134DB /* Debug */,
+				195DCBEE18F3E78300B134DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		195DCBEF18F3E78300B134DB /* Build configuration list for PBXNativeTarget "Tessie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195DCBF018F3E78300B134DB /* Debug */,
+				195DCBF118F3E78300B134DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		195DCBF218F3E78300B134DB /* Build configuration list for PBXNativeTarget "TessieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				195DCBF318F3E78300B134DB /* Debug */,
+				195DCBF418F3E78300B134DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 195DCBB518F3E78300B134DB /* Project object */;
+}
