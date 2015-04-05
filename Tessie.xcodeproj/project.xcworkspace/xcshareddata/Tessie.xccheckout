@@ -10,14 +10,14 @@
 	<string>Tessie</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>4437769BE489EEAB7ABB7888EA188DE9A8AE8F6F</key>
+		<key>9E07C9AB72CE3C04867FB6D6393A8AFF5C3C1D7B</key>
 		<string>bitbucket.org:teslaplus/tessie-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Tessie.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>4437769BE489EEAB7ABB7888EA188DE9A8AE8F6F</key>
+		<key>9E07C9AB72CE3C04867FB6D6393A8AFF5C3C1D7B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4437769BE489EEAB7ABB7888EA188DE9A8AE8F6F</string>
+	<string>9E07C9AB72CE3C04867FB6D6393A8AFF5C3C1D7B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4437769BE489EEAB7ABB7888EA188DE9A8AE8F6F</string>
+			<string>9E07C9AB72CE3C04867FB6D6393A8AFF5C3C1D7B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>tessie-ios</string>
 		</dict>

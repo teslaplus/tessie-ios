@@ -16,39 +16,42 @@
 {
     NSMutableArray *tableData;
     NSMutableArray *commandPhrases;
+    NSArray * cmdReset;
 }
 
 @end
 
 @implementation TessieViewController
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // reset sequence to move mouse the the top left and click, to close any open dialogs
+    cmdReset = [NSArray arrayWithObjects:
+                @"u127", @"l127", @"u127", @"l127", @"u127",
+                @"l127", @"u127", @"l127", @"u127", @"l127",
+                @"u127", @"l127", @"c", @"w10", nil];
     
     tableData = [NSMutableArray array];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+    self.navigationItem.rightBarButtonItem = barButton;
+    self.navigationItem.hidesBackButton = NO;
     
     bleShield = [[BLE alloc] init];
     [bleShield controlSetup];
     bleShield.delegate = self;
     
-    self.navigationItem.hidesBackButton = NO;
-    
-    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
-    [self navigationItem].rightBarButtonItem = barButton;
+    self.fliteController = [[OEFliteController alloc] init];
+    self.slt = [[Slt alloc] init];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, .5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [self connectToTesla];
     });
-    
-    self.fliteController = [[OEFliteController alloc] init];
-    self.slt = [[Slt alloc] init];
-    
 }
 
 
@@ -120,9 +123,6 @@ NSTimer *rssiTimer;
     //parse command data
     NSError* error;
     NSDictionary* commands = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
-    NSLog(@"commands: %@", commands);
-    
     commandPhrases = [NSMutableArray arrayWithObjects: nil];
     
     for (NSDictionary * command in commands) {
@@ -175,23 +175,17 @@ NSTimer *rssiTimer;
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // TODO: dispose of any resources that can be recreated.
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = @"command_cell";
-    
     TessieCommandTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
     NSDictionary *dict = [tableData objectAtIndex:indexPath.row];
     NSString *title = [dict objectForKey:TITLE_STR];
-    
-    cell.receive.image = [UIImage imageNamed:@"arduino.png"];
     cell.text.text = title;
     cell.text.textAlignment = NSTextAlignmentLeft;
-    cell.send.image = nil;
-    
     return cell;
 }
 
@@ -210,21 +204,7 @@ NSTimer *rssiTimer;
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     [self.text resignFirstResponder];
     NSDictionary *dict = [tableData objectAtIndex:indexPath.row];
-    NSArray *commands = [dict objectForKey:COMMANDS_STR];
-    [self sendCommands:commands];
-}
-
-// Send (composite) command to car
--(void)sendCommands:(NSArray*) commands
-{
-    dispatch_async(dispatch_get_global_queue( 0, 0), ^(void){
-
-     for (NSString * command in commands) {
-        [self sendCommand:command];
-        // hack
-        [NSThread sleepForTimeInterval:.05];
-     }
-   });
+    [self sendCommand:dict];
 }
 
 -(void) bleDidReceiveData:(unsigned char *)data length:(int)length
@@ -234,11 +214,38 @@ NSTimer *rssiTimer;
     NSLog(@"received: %@", s);
 }
 
+- (void) sendCommand:(NSDictionary *) command {
+    NSString * commandTitle = [command objectForKey:TITLE_STR];
+    NSArray *commands = [command objectForKey:COMMANDS_STR];
+    NSLog(@"Sending Command: \"%@\"", commandTitle);
+    [self.fliteController say:commandTitle withVoice:self.slt];
+    [self bleSendCommands:commands];
+}
+
+// Send (composite) command to car
+-(void)bleSendCommands:(NSArray*) commands
+{
+    dispatch_async(dispatch_get_global_queue( 0, 0), ^(void){
+     for (NSString * command in commands) {
+         // todo: clean this up, encapsulate if possible.
+         if ([@"reset" isEqualToString:command]) {
+             for (NSString * cmdString in cmdReset) {
+                 [self bleSendCommand:cmdString];
+             }
+         } else {
+             [self bleSendCommand:command];
+         }
+        // hack
+        [NSThread sleepForTimeInterval:.05];
+     }
+   });
+}
+
+
 // Send (atomic) command to car
--(void)sendCommand:(NSString*) command
+-(void)bleSendCommand:(NSString*) command
 {
     command = [NSString stringWithFormat:@"%c%@%c", '#', command, '$'];
-    NSLog(@"%@", command);
 
     NSData *d = [command dataUsingEncoding:NSUTF8StringEncoding];
     if (bleShield.activePeripheral.state == CBPeripheralStateConnected) {
@@ -247,42 +254,40 @@ NSTimer *rssiTimer;
 }
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
-    NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
+    NSLog(@"Heard speech: \"%@\", score: %@, id: %@", hypothesis, recognitionScore, utteranceID);
     NSInteger commandIndex = [commandPhrases indexOfObject:hypothesis];
     if (commandIndex >= 0 && commandIndex < [tableData count]) {
         NSDictionary *dict = [tableData objectAtIndex:commandIndex];
-        [self.fliteController say:[dict objectForKey:TITLE_STR] withVoice:self.slt];
-        NSArray *commands = [dict objectForKey:COMMANDS_STR];
-        [self sendCommands:commands];
+        [self sendCommand:dict];
     }
 }
 
 - (void) pocketsphinxDidStartListening {
-    NSLog(@"Pocketsphinx is now listening.");
+    NSLog(@"Voice: is now listening.");
 }
 
 - (void) pocketsphinxDidDetectSpeech {
-    NSLog(@"Pocketsphinx has detected speech.");
+    NSLog(@"Voice: has detected speech.");
 }
 
 - (void) pocketsphinxDidDetectFinishedSpeech {
-    NSLog(@"Pocketsphinx has detected a period of silence, concluding an utterance.");
+    NSLog(@"Voice: has detected a period of silence, concluding an utterance.");
 }
 
 - (void) pocketsphinxDidStopListening {
-    NSLog(@"Pocketsphinx has stopped listening.");
+    NSLog(@"Voice: has stopped listening.");
 }
 
 - (void) pocketsphinxDidSuspendRecognition {
-    NSLog(@"Pocketsphinx has suspended recognition.");
+    NSLog(@"Voice: has suspended recognition.");
 }
 
 - (void) pocketsphinxDidResumeRecognition {
-    NSLog(@"Pocketsphinx has resumed recognition.");
+    NSLog(@"Voice: has resumed recognition.");
 }
 
 - (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
-    NSLog(@"Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
+    NSLog(@"Voice: is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
 }
 
 - (void) pocketSphinxContinuousSetupDidFailWithReason:(NSString *)reasonForFailure {
