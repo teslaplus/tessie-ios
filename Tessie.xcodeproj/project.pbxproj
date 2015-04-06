@@ -14,6 +14,7 @@
 		1462D7301AD05CB60022DAD1 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1462D72D1AD05CB60022DAD1 /* AcousticModelEnglish.bundle */; };
 		1462D7311AD05CB60022DAD1 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462D72E1AD05CB60022DAD1 /* OpenEars.framework */; };
 		1462D7321AD05CB60022DAD1 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1462D72F1AD05CB60022DAD1 /* Slt.framework */; };
+		147281181AD2355D00E87C55 /* voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 147281171AD2355D00E87C55 /* voice.png */; };
 		14C3E9331AC8B9C70073C47E /* commands.json in Resources */ = {isa = PBXBuildFile; fileRef = 14C3E9311AC8B9C70073C47E /* commands.json */; };
 		195DCBC118F3E78300B134DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC018F3E78300B134DB /* Foundation.framework */; };
 		195DCBC318F3E78300B134DB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 195DCBC218F3E78300B134DB /* CoreGraphics.framework */; };
@@ -49,6 +50,7 @@
 		1462D72D1AD05CB60022DAD1 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AcousticModelEnglish.bundle; path = Framework/AcousticModelEnglish.bundle; sourceTree = "<group>"; };
 		1462D72E1AD05CB60022DAD1 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenEars.framework; path = Framework/OpenEars.framework; sourceTree = "<group>"; };
 		1462D72F1AD05CB60022DAD1 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = Framework/Slt.framework; sourceTree = "<group>"; };
+		147281171AD2355D00E87C55 /* voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voice.png; sourceTree = "<group>"; };
 		14C3E9311AC8B9C70073C47E /* commands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = commands.json; sourceTree = "<group>"; };
 		195DCBBD18F3E78300B134DB /* Tessie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tessie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		195DCBC018F3E78300B134DB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +98,7 @@
 		1428EAD81AC77139002175B2 /* Tessie */ = {
 			isa = PBXGroup;
 			children = (
+				147281171AD2355D00E87C55 /* voice.png */,
 				1428EABD1AC77075002175B2 /* Main.storyboard */,
 				1428EAC51AC77075002175B2 /* TessieAppDelegate.h */,
 				1428EAC61AC77075002175B2 /* TessieAppDelegate.m */,
@@ -262,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				147281181AD2355D00E87C55 /* voice.png in Resources */,
 				195DCBD918F3E78300B134DB /* Images.xcassets in Resources */,
 				14C3E9331AC8B9C70073C47E /* commands.json in Resources */,
 				1428EACE1AC77075002175B2 /* Main.storyboard in Resources */,

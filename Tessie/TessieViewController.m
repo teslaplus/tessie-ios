@@ -141,9 +141,6 @@ NSTimer *rssiTimer;
     NSString *name = @"TeslaCommands";
     NSError *err = [lmGenerator generateLanguageModelFromArray:commandPhrases withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to create a Spanish language model instead of an English one.
     
-    NSString *lmPath = nil;
-    NSString *dicPath = nil;
-    
     if(err == nil) {
         
         lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"TeslaCommands"];
@@ -156,10 +153,6 @@ NSTimer *rssiTimer;
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
     
-    // move to action
-    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-    [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English.
-
 }
 
 -(void) bleDidConnect
@@ -167,6 +160,7 @@ NSTimer *rssiTimer;
     [activityIndicator stopAnimating];
     [self initCommands];
     self.navigationItem.leftBarButtonItem.enabled = YES;
+    self.voiceButton.enabled = YES;
     [self.navigationItem.leftBarButtonItem setTitle:@"Disconnect"];
     
     NSLog(@"bleDidConnect");
@@ -188,10 +182,19 @@ NSTimer *rssiTimer;
     cell.text.textAlignment = NSTextAlignmentLeft;
     return cell;
 }
+- (IBAction)btnVoiceDown:(UIButton *)sender {
+    [self startListening];
+}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 60.0f;
+-(void) startListening {
+    if ([[OEPocketsphinxController sharedInstance] isListening]) {
+        return;
+    }
+    
+    self.voiceButton.enabled = FALSE;
+    
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+    [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -202,7 +205,6 @@ NSTimer *rssiTimer;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [self.text resignFirstResponder];
     NSDictionary *dict = [tableData objectAtIndex:indexPath.row];
     [self sendCommand:dict];
 }
@@ -254,12 +256,19 @@ NSTimer *rssiTimer;
 }
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+    [[OEPocketsphinxController sharedInstance] stopListening];
+    self.voiceButton.enabled = YES;
+    
     NSLog(@"Heard speech: \"%@\", score: %@, id: %@", hypothesis, recognitionScore, utteranceID);
-    NSInteger commandIndex = [commandPhrases indexOfObject:hypothesis];
-    if (commandIndex >= 0 && commandIndex < [tableData count]) {
-        NSDictionary *dict = [tableData objectAtIndex:commandIndex];
-        [self sendCommand:dict];
-    }
+    
+    [commandPhrases enumerateObjectsUsingBlock:^(id phrase, NSUInteger idx, BOOL *stop)
+    {
+        NSRange range = [hypothesis rangeOfString:phrase];
+        if (range.location != NSNotFound) {
+            NSDictionary *dict = [tableData objectAtIndex:idx];
+            [self sendCommand:dict];
+        }
+    }];
 }
 
 - (void) pocketsphinxDidStartListening {

@@ -20,10 +20,12 @@
 {
     BLE *bleShield;
     UIActivityIndicatorView *activityIndicator;
+    NSString *lmPath;
+    NSString *dicPath;
 }
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, weak) IBOutlet UITextField *text;
+@property (nonatomic, weak) IBOutlet UIButton *voiceButton;
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
 @property (strong, nonatomic) OEFliteController *fliteController;
 @property (strong, nonatomic) Slt *slt;
