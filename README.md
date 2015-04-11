@@ -24,8 +24,26 @@ Note: This software is very early alpha. Don't crash your Tesla please.
 
 ## Usage
 - plug Arduino BLE board into your Tesla Model S (USB port)
-- Launch Tessie app 
+- Launch Tessie app
 - Select commands or say them
+
+## Supported Commands
+- Show Media
+- Show Navigation
+- Show Calendar
+- Show Energy
+- Show Web
+- Show Camera
+- Show Phone
+- Garage Door
+- Show Battery
+- Show Controls
+- Close Sunroof
+- Vent Sunroof
+- Open Sunroof 75%
+- Open Sunroof
+
+see [Command Configuration](Tessie/commands.json)
 
 ## License
 - MIT
