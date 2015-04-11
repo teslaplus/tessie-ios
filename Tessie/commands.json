@@ -1,16 +1,58 @@
-[{
-  "title": "Garage Door",
-  "commands": ["reset", "d10", "r100", "r50", "r50", "w10", "c", "w50", "d25", "c"]
-}, {
-  "title": "Show Battery",
-  "commands": ["reset", "d10", "r100", "r30", "c"]
-}, {
-  "title": "Show Media",
-  "commands": ["reset", "d50", "r90", "c"]
-}, {
-  "title": "Show Navigation",
-  "commands": ["reset", "d50", "r90", "r127", "c"]
-}, {
-  "title": "Show Calendar",
-  "commands": ["reset", "d50", "r90", "r127", "r127", "c"]
-}]
+ [{
+     "title": "Show Media",
+     "commands": ["reset", "d50", "r90", "c"]
+   }, {
+     "title": "Show Navigation",
+     "commands": ["reset", "r127", "d50", "r90", "c"]
+   }, {
+     "title": "Show Calendar",
+     "commands": ["reset", "r127", "r127", "d50", "r90", "c"]
+   }, {
+     "title": "Show Energy",
+     "commands": ["reset", "r127", "r127", "r127", "d50", "r90", "c"]
+   }, {
+     "title": "Show Web",
+     "commands": ["reset", "r127", "r127", "r127", "r127", "d50", "r90", "c"]
+   }, {
+     "title": "Show Camera",
+     "commands": ["reset", "r127", "r127", "r127", "r127", "r127", "d50", "r90", "c"]
+   }, {
+     "title": "Show Phone",
+     "commands": ["reset", "r127", "r127", "r127", "r127", "r127", "r127", "r20", "d50", "r90", "c"]
+   }, {
+     "title": "Garage Door",
+     "commands": ["reset", "d10", "r100", "r50", "r50", "w10", "c", "w50", "d25", "c"]
+   }, {
+     "title": "Show Battery",
+     "commands": ["reset", "d10", "r100", "r30", "c"]
+   },
+   {
+     "title": "Show Controls",
+     "commands": ["reset", "bottom", "r20", "u10", "c"]
+   }, {
+     "title": "Close Sunroof",
+     "commands": [
+       "reset", "bottom", "r20", "u10", "c", "w100",
+       "top", "r127", "r127", "r127", "r127", "r127", "r127", "r20", "d110", "c"
+     ]
+   },
+   {
+     "title": "Vent Sunroof",
+     "commands": [
+       "reset", "bottom", "r20", "u10", "c", "w100",
+       "top", "r127", "r127", "r127", "r127", "r127", "r127", "r20", "d127", "c"
+     ]
+   }, {
+     "title": "Open Sunroof 75%",
+     "commands": [
+       "reset", "bottom", "r20", "u10", "c", "w100",
+       "top", "r127", "r127", "r127", "r127", "r127", "r127", "r20", "d127", "d127", "c"
+     ]
+   }, {
+     "title": "Open Sunroof",
+     "commands": [
+       "reset", "bottom", "r20", "u10", "c", "w100",
+       "top", "r127", "r127", "r127", "r127", "r127", "r127", "r20", "d127", "d127", "d20", "c"
+     ]
+   }
+ ]
